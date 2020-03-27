@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'PocketGarage/css/style1.css' %}" type="text/css">
+	<title>Login</title>
+</head>
+<body>
+	<section>
+		<h1>Iniciar Sesion</h1>
+		<form method="POST">
+		{% csrf_token %}
+		{{ form.as_ul }}
+		<button>Login</button>
+		</form>
+	</section>
+</body>
+</html>
