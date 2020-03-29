@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from PocketGarage.forms import *
 from PocketGarage.models import *
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib import messages
 
 def home(request):
 	return render(request,'PocketGarage/index1.html')
@@ -48,6 +49,10 @@ def register(request):
 				user=Usuario(CI=CI,Nombre=Nombre,Telefono=Telefono,Email=Email,Contraseña=Contraseña)
 				user.save()
 				return redirect('/PocketGarage/login.html/')
+			else:
+				messages.error(request,'Las contraseñas no coinciden!')
+		else:
+			messages.error(request,'Ya existe un usuario con ese CI!')
 	else:
 		form = RegisterForm()
 	return render(request,'PocketGarage/register.html',{'form':form})
@@ -112,4 +117,3 @@ def error404(request,exception):
 
 def error500(request):
 	return render(request,'PocketGarage/error500.html',status=500)
-	
