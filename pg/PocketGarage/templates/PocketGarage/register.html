@@ -15,7 +15,13 @@
 	<div class="log-form">
 	  <center>
 	  <h2>Registro</h2>
-	  
+	  {% if messages %}
+	  <ul class="messages">
+	  	{% for message in messages %}
+	  		{{ message }}
+	  	{% endfor %}
+	  </ul>
+	  {% endif %}
 	  <form method="POST">
 		{% csrf_token %}
 		<anything_else> 
@@ -31,8 +37,4 @@
 	</div>
 	  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	</body>
-
-
-
-
 </html>
