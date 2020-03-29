@@ -20,6 +20,7 @@
 				<li><a href="/PocketGarage/index20.html">Vehículos</a>
 				<li><a href="/PocketGarage/repuesto.html">Publicar Repuesto</a></li>
 				<li><a href="/PocketGarage/vehiculo.html">Publicar Vehiculo</a></li>
+				<li><a href="/PocketGarage/publicaciones.html">Mis Publicaciones</a></li>
 				<li><a href="/PocketGarage/index3.html">Cerrar Sesion</a></li>
 			</ul>
 		</nav>
@@ -29,19 +30,22 @@
 	</section>
 	<section>
 		{% for repuesto in Repuestos %}
+		<section>
 			<img src="/media/{{ repuesto.Foto }}" width="500" height="300"><br>
 			<p style="color:white">
 				Descripción: {{ repuesto.Descripcion }}<br>
 				Precio: {{ repuesto.Precio }}<br>
-				Información del Vendedor: {{ repuesto.Info_Vendedor }}<br>
+				Información del Vendedor:<br>
+				Nombre: {{ repuesto.Nombre_Vendedor }}<br>
+				Telefono: {{ repuesto.Telefono_Vendedor }}<br>
+				Email: {{ repuesto.Email_Vendedor }}<br>
+				<br>
 			</p>
+		</section>
 		{% endfor %}
 	</section>
 	<footer>
-		<p>&copy; Pocket Garage</p>
-		<address>
-			Contact: pocketgarage@gmail.com
-		</address>
+		<p style="color:white">&copy; Pocket Garage</p>
 	</footer>
 </body>
 </html>

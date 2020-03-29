@@ -14,4 +14,5 @@ urlpatterns = [
 	path('PocketGarage/login.html/',views.login),
 	path('PocketGarage/repuesto.html/',views.publirepuesto),
 	path('PocketGarage/vehiculo.html/',views.publiauto),
+	path('PocketGarage/publicaciones.html/',views.mispublis),
 ]

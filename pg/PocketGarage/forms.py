@@ -25,17 +25,19 @@ class RepuestoForm(forms.Form):
 	Descripcion = forms.CharField(max_length=200)
 	Foto = forms.ImageField()
 	Precio = forms.CharField(max_length=25)
-	Informacion_Vendedor = forms.CharField(max_length=150)
 	class Meta:
 		model = Repuesto
-		fields = ('Descripcion','Foto','Precio','Informacion_Vendedor')
+		fields = ('Descripcion','Foto','Precio','CI','Nombre_Vendedor','Telefono_Vendedor','Email_Vendedor')
 
 class AutoForm(forms.Form):
-	Modelo = forms.CharField(max_length=50)
+	Marca = forms.CharField(max_length=25)
+	Modelo = forms.CharField(max_length=25)
+	Año = forms.IntegerField()
+	Color = forms.CharField(max_length=30)
+	Motor = forms.CharField(max_length=20)
 	Precio = forms.CharField(max_length=25)
 	Foto = forms.ImageField()
-	Ficha_Tecnica = forms.CharField(max_length=500)
-	Informacion_Propietario = forms.CharField(max_length=150)
+	Especificaciones = forms.CharField(max_length=500)
 	class Meta:
 		model = Vehiculo
-		fields = ('Modelo','Precio','Foto','Ficha_Tecnica','Informacion_Propietario')
+		fields = ('Marca','Modelo','Año','Color','Motor','Precio','Foto','Especificaciones','CI','Nombre_Propietario','Telefono_Propietario','Email_Propietario')

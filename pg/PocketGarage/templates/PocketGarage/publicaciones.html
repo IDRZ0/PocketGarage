@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" class="no-js">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Pocket Garage - Vehículos</title>
+    <meta name="description" content="Todo lo relacionado al mundo automotriz.">
+	<link rel="stylesheet" href="{% static 'PocketGarage/css/style1.css' %}" type="text/css">
+</head>
+
+<body>
+	<header>
+		<div id="logo">POCKET GARAGE</div>
+		<nav>  
+			<ul>
+				<li><a href="/PocketGarage/index10.html">Inicio</a>
+				<li><a href="/PocketGarage/index20.html">Vehiculos</a></li>
+				<li><a href="/PocketGarage/index30.html">Repuestos</a>
+				<li><a href="/PocketGarage/repuesto.html">Publicar Repuesto</a></li>
+				<li><a href="/PocketGarage/vehiculo.html">Publicar Vehiculo</a></li>
+				<li><a href="/PocketGarage/index1.html">Cerrar Sesion</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<strong style="color:white">Aquí te mostramos todos los autos que publicaste.</strong>
+	</section>
+	<section>
+		{% for vehiculo in Vehiculos %}
+		<section>
+			<img src="/media/{{ vehiculo.Foto }}" width="500" height="300"><br>
+			<p style="color:white">
+				Marca: {{ vehiculo.Marca }}<br>
+				Modelo: {{ vehiculo.Modelo }}<br>
+				Año: {{ vehiculo.Año }}<br>
+				Color: {{ vehiculo.Color }}<br>
+				Motor: {{ vehiculo.Motor }}<br>
+				Precio: {{ vehiculo.Precio }}<br>
+				Especificaciones: {{ vehiculo.Especificaciones }}<br>
+				<br>
+			</p>
+		</section>
+		{% endfor %}
+	</section>
+	<section>
+		<strong style="color:white">Aquí te mostramos todos los repuestos que publicaste.</strong>
+	</section>
+	<section>
+		{% for repuesto in Repuestos %}
+		<section>
+			<img src="/media/{{ repuesto.Foto }}" width="500" height="300"><br>
+			<p style="color:white">
+				Descripción: {{ repuesto.Descripcion }}<br>
+				Precio: {{ repuesto.Precio }}<br>
+				<br>
+			</p>
+		</section>
+		{% endfor %}
+	</section>
+	<footer>
+		<p style="color:white">&copy; Pocket Garage</p>
+	</footer>
+</body>
+</html>
