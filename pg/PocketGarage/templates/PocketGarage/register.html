@@ -18,7 +18,7 @@
 	  
 	  <form method="POST">
 		{% csrf_token %}
-		<anything_else>
+		<anything_else> 
 		{% for field in form %}
 		<div class="field">
 			<label for="{{ field.id_for_label }}" class="label">{{ field.html_name }}</label>
