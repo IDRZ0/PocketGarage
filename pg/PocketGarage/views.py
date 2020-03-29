@@ -106,3 +106,10 @@ def publiauto(request):
 	else:
 		form = AutoForm()
 	return render(request,'PocketGarage/vehiculo.html',{'form':form})
+
+def error404(request,exception):
+	return render(request,'PocketGarage/error404.html',status=404)
+
+def error500(request):
+	return render(request,'PocketGarage/error500.html',status=500)
+	
