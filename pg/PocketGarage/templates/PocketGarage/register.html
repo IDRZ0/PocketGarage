@@ -24,7 +24,6 @@
 			</ul>
 			{% endif %}
 				<form method="POST">
-					
 					{% csrf_token %}
 					<anything_else> 
 					{% for field in form %}
@@ -33,13 +32,11 @@
 						{{ field }}
 					</div>
 					{% endfor %}
-					<button type="submit" class="btn">Registrarse</button>
+					<input type="submit" name="" value="Registrarse">
 				  </center>
 				</form>
-			
 		  </div>
 		</div>
 	  </section>
 </body>
 </html>
-

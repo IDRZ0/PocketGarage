@@ -9,19 +9,12 @@
 		<link rel="stylesheet" href="{% static 'PocketGarage/css/styleregisteruser.css' %}" type="text/css">
 	<title>Repuesto</title>
 </head>
-
-
 <body>
 	<!-- partial:index.partial.html -->
 	<div class="log-form">
 	  <center>
 	  <h2>Registro Repuesto</h2>
-	 
 	  <form method="POST" enctype="multipart/form-data">
-
-		<header class="login__header">
-			<h3 class="login__title">Registro Repuesto</h3>
-		  </header>
 		{% csrf_token %}
 		{% for field in form %}
 			<div class="field">
@@ -29,18 +22,10 @@
 				{{ field }}
 			</div>
 		{% endfor %}
-
-
-	
-		
 		<button type="submit">Publicar</button>
-	  	
 	  </form>
-
 	</center>
 	</div>
 	  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	</body>
 </html>
-
-
