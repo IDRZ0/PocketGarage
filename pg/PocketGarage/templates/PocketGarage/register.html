@@ -2,41 +2,37 @@
 <html>
 {% load static %}
 <head>
-	
 	<meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'PocketGarage/css/styleloginbest.css' %}" type="text/css">
-	<title>Login</title>
+    <link rel="stylesheet" href="{% static 'PocketGarage/css/style1.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'PocketGarage/css/stylereg.css' %}" type="text/css">
 	<title>Registro</title>
 </head>
 <body>
-	<section>
-		<div class="container">
-		  <div class="login-form">
-			<center>
-			<h2>Registro</h2>
-			{% if messages %}
-			<ul class="messages">
-				{% for message in messages %}
-					{{ message }}
-				{% endfor %}
-			</ul>
-			{% endif %}
-				<form method="POST">
-					{% csrf_token %}
-					<anything_else> 
-					{% for field in form %}
-					<div class="field">
-						<label for="{{ field.id_for_label }}" class="label">{{ field.html_name }}</label>
-						{{ field }}
-					</div>
-					{% endfor %}
-					<input type="submit" name="" value="Registrarse">
-				  </center>
-				</form>
-		  </div>
-		</div>
-	  </section>
+	<div class="log-form">
+		<center>
+		<h2>Pocket Garage</h2>
+		{% if messages %}
+		<ul class="messages">
+			{% for message in messages %}
+				{{ message }}
+			{% endfor %}
+		</ul>
+		{% endif %}
+		<form method="POST">
+			{% csrf_token %}
+			{% for field in form %}
+			<div class="field">
+				<label for="{{ field.id_for_label }}" class="label">
+				{{ field.html_name }}</label>
+				{{ field }}
+			</div>
+			{% endfor %}
+			<input type="submit" name="" value="Registrarse">
+		</form>
+		</center>
+	</div>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 </body>
 </html>
